@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Danilo Esteban Rodriguez Zapata - SENA English Learning Portfolio">
+<title>Danilo's English Learning Journey | SENA</title>
+<style>
+:root {
+  --bg:#08111f; --bg2:#0c1729; --panel:#101e33; --panel2:#142641;
+  --text:#f6f9fd; --muted:#a9bad0; --line:#263b5b;
+  --green:#39d98a; --blue:#59bfff; --violet:#a284ff; --yellow:#ffd166;
+  --shadow:0 22px 60px rgba(0,0,0,.26);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65;
+  background:
+   radial-gradient(circle at 18% 6%,rgba(89,191,255,.12),transparent 24%),
+   radial-gradient(circle at 86% 4%,rgba(162,132,255,.12),transparent 23%),
+   linear-gradient(180deg,var(--bg),var(--bg2));
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:1180px;margin:auto;padding:0 24px}
+nav{
+ position:sticky;top:0;z-index:80;background:rgba(8,17,31,.82);
+ border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(14px)
+}
+.nav-inner{max-width:1180px;margin:auto;padding:13px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}
+.logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),var(--blue));color:#06140d;font-family:Consolas,monospace}
+.brand em{font-style:normal;color:var(--green)}
+.navlinks{display:flex;gap:18px;flex-wrap:wrap;color:#ccdaeb;font-size:.91rem}
+.navlinks a:hover{color:#fff}
+.hero{min-height:88vh;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;padding:74px 0 60px}
+.eyebrow{font-weight:850;color:var(--blue);font-size:.76rem;letter-spacing:.15em;text-transform:uppercase}
+.hero h1{font-size:clamp(3rem,7vw,6.3rem);letter-spacing:-.055em;line-height:.92;margin:14px 0 24px}
+.grad{background:linear-gradient(90deg,var(--green),var(--blue),var(--violet));background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{font-size:1.12rem;color:#c8d5e5;max-width:740px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 17px;border-radius:12px;border:1px solid var(--line);font-weight:800;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,var(--green),#72efb4);color:#06140d;border:0}
+.secondary{background:rgba(255,255,255,.035)}
+.terminal{background:linear-gradient(180deg,#12243d,#0c1728);border:1px solid rgba(255,255,255,.1);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}
+.term-top{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);color:#99abc1;font-size:.8rem}
+.code{padding:25px;font:14px/1.75 Consolas,Monaco,monospace;white-space:pre-wrap;color:#eaf4ff}
+.k{color:var(--violet)} .s{color:#94edbb} .n{color:var(--yellow)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 25px 25px}
+.stat{padding:13px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:13px}
+.stat b{display:block;font-size:1.25rem} .stat span{font-size:.76rem;color:#9db0c8}
+.section{padding:76px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:30px}
+.section-head h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1;margin:8px 0 0;letter-spacing:-.04em}
+.section-head p{max-width:590px;color:var(--muted);margin:0}
+.panel{background:linear-gradient(180deg,rgba(16,30,51,.95),rgba(12,24,42,.95));border:1px solid var(--line);border-radius:20px;padding:25px}
+.profile{display:grid;grid-template-columns:1fr .95fr;gap:20px}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.info{padding:12px 14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:12px}
+.info small{display:block;color:#8fa5be} .info strong{display:block;margin-top:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:7px 10px;border-radius:999px;background:rgba(89,191,255,.07);border:1px solid rgba(89,191,255,.17);color:#cdeeff;font-size:.81rem}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:26px}
+.timeline:before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:linear-gradient(90deg,var(--green),var(--blue),var(--violet),var(--yellow));opacity:.7}
+.stage{position:relative;text-align:center;z-index:2}
+.stage div{width:48px;height:48px;margin:auto;border-radius:15px;background:#091426;border:1px solid #3b5b80;display:grid;place-items:center;font-weight:900}
+.stage b{display:block;margin-top:8px} .stage span{font-size:.77rem;color:var(--muted)}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.evidence{background:linear-gradient(180deg,rgba(17,32,55,.97),rgba(11,23,40,.97));border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.11)}
+.e-body{padding:23px}
+.e-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,rgba(57,217,138,.15),rgba(89,191,255,.12));border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;font-size:1.3rem}
+.done{font-size:.71rem;text-transform:uppercase;letter-spacing:.08em;font-weight:850;color:#b9f6d3;border:1px solid rgba(57,217,138,.22);background:rgba(57,217,138,.08);padding:5px 8px;border-radius:999px}
+.code-label{font:12px Consolas,monospace;color:#83d3ff;margin-top:16px}
+.evidence h3{margin:7px 0 8px;font-size:1.28rem;line-height:1.22}
+.evidence p{color:#bdcbdb}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.tags span{font-size:.74rem;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);color:#cfdbeb}
+.media-wrap{border-top:1px solid var(--line);background:#07111f}
+.video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.preview{display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center;padding:18px}
+.preview img{border-radius:12px;border:1px solid rgba(255,255,255,.1)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.small-btn{display:inline-flex;padding:9px 12px;border-radius:10px;border:1px solid var(--line);font-weight:750;font-size:.85rem;background:rgba(255,255,255,.035)}
+.small-btn:hover{border-color:#4c709a}
+.audio-box{padding:18px}
+audio{width:100%}
+details{margin-top:15px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.025);overflow:hidden}
+summary{cursor:pointer;padding:12px 14px;font-weight:800;color:#dbe9f8}
+.detail-content{padding:0 14px 15px;color:#bdcbdb;white-space:pre-line}
+.forum-q{margin:13px 0;padding:15px;border-left:3px solid var(--green);background:rgba(57,217,138,.045);border-radius:0 12px 12px 0}
+.forum-q b{display:block;color:#fff;margin-bottom:5px}
+.ple-image{padding:16px;background:#f7f9fc}
+.ple-image img{border-radius:12px}
+.reflection-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.feature{border-radius:22px;padding:28px;border:1px solid rgba(255,255,255,.09);min-height:320px}
+.feature.one{background:radial-gradient(circle at 88% 12%,rgba(89,191,255,.18),transparent 28%),linear-gradient(135deg,#10243e,#101a2d)}
+.feature.two{background:radial-gradient(circle at 88% 12%,rgba(162,132,255,.18),transparent 28%),linear-gradient(135deg,#201942,#111a2e)}
+.feature h3{font-size:1.65rem;line-height:1.08;margin:8px 0 15px}
+.feature p,.feature li{color:#c8d5e5}
+.final{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+.quote{font-size:1.35rem;line-height:1.5;margin:0}
+.note{padding:14px;border-radius:12px;background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.18);color:#f8e4ac}
+footer{border-top:1px solid rgba(255,255,255,.07);padding:28px 0 44px;color:#91a5bd;font-size:.88rem}
+.footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.top-link{position:fixed;right:20px;bottom:20px;width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#152944;border:1px solid #355577;box-shadow:0 10px 30px rgba(0,0,0,.24)}
+@media(max-width:920px){.hero,.profile,.final{grid-template-columns:1fr}.evidence-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.navlinks{display:none}.hero{min-height:auto;padding-top:54px}.section-head{display:block}.section-head p{margin-top:14px}.timeline{grid-template-columns:1fr 1fr;gap:18px}.timeline:before{display:none}.reflection-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.preview{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body id="top">
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="logo">&lt;/&gt;</span><span>Danilo's <em>English Journey</em></span></a>
+    <div class="navlinks">
+      <a href="#about">About</a><a href="#path">Learning Path</a><a href="#evidence">Evidence</a>
+      <a href="#reflections">Reflections</a><a href="#final">Final Reflection</a>
+    </div>
+  </div>
+</nav>
+
+<header class="container hero">
+  <div>
+    <div class="eyebrow">SENA · Software Analysis and Development</div>
+    <h1>My English <span class="grad">Learning Journey</span></h1>
+    <p>A multimedia portfolio that documents my English learning process through speaking, writing, professional communication, critical reflection and technology.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#evidence">Explore my evidence →</a>
+      <a class="btn secondary" href="#about">About me</a>
+    </div>
+  </div>
+  <div class="terminal">
+    <div class="term-top">portfolio_profile.js</div>
+    <div class="code"><span class="k">const</span> learner = {
+  name: <span class="s">"Danilo Esteban Rodríguez Zapata"</span>,
+  program: <span class="s">"Software Analysis and Development"</span>,
+  institution: <span class="s">"SENA"</span>,
+  group: <span class="n">3235900</span>,
+  goal: <span class="s">"Use English for technology and professional growth"</span>
+};
+
+<span class="k">while</span> (learning) {
+  practice();
+  reflect();
+  improve();
+}</div>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>portfolio components</span></div>
+      <div class="stat"><b>4</b><span>learning stages</span></div>
+      <div class="stat"><b>∞</b><span>continuous learning</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="section">
+<div class="container">
+  <div class="section-head">
+    <div><div class="eyebrow">About me</div><h2>English as a professional tool</h2></div>
+    <p>This portfolio connects my English training with software development, analytical thinking and professional communication.</p>
+  </div>
+  <div class="profile">
+    <div class="panel">
+      <h3>Student profile</h3>
+      <p>My name is <strong>Danilo Esteban Rodríguez Zapata</strong>. I am a SENA learner in the Software Analysis and Development program. I am interested in technology, data, software, research and continuous learning. For me, English is a practical tool for accessing knowledge, documentation and international professional opportunities.</p>
+      <div class="info-grid">
+        <div class="info"><small>Institution</small><strong>SENA</strong></div>
+        <div class="info"><small>Program</small><strong>Software Analysis and Development</strong></div>
+        <div class="info"><small>Training center</small><strong>Centro Agroindustrial · Armenia, Quindío</strong></div>
+        <div class="info"><small>Group / Ficha</small><strong>3235900</strong></div>
+        <div class="info"><small>Instructor</small><strong>Fabio Cardona</strong></div>
+        <div class="info"><small>Portfolio year</small><strong>2026</strong></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Skills developed through this journey</h3>
+      <div class="chips">
+        <span class="chip">Speaking</span><span class="chip">Writing</span><span class="chip">Listening</span>
+        <span class="chip">Pronunciation</span><span class="chip">Professional English</span>
+        <span class="chip">Critical Thinking</span><span class="chip">Media Literacy</span>
+        <span class="chip">Digital Communication</span><span class="chip">Autonomous Learning</span>
+      </div>
+      <p style="margin-top:18px;color:#b9c9da">This public portfolio intentionally excludes my government ID number and personal phone number. The academic information needed to identify my learning process is included without exposing unnecessary sensitive data.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="path" class="section">
+<div class="container">
+  <div class="section-head">
+    <div><div class="eyebrow">Learning path</div><h2>From foundations to integration</h2></div>
+    <p>The portfolio follows the same progression as my SENA English evidence: personal communication, professional interaction, reflection and autonomous learning.</p>
+  </div>
+  <div class="timeline">
+    <div class="stage"><div>GA1</div><b>Foundations</b><span>Video · Brochure</span></div>
+    <div class="stage"><div>GA2</div><b>Communication</b><span>Interview · Chronicle · Presentation · Writing</span></div>
+    <div class="stage"><div>GA3</div><b>Expression</b><span>Audio · Forum</span></div>
+    <div class="stage"><div>GA4</div><b>Integration</b><span>PLE · Blog</span></div>
+  </div>
+</div>
+</section>
+
+<section id="evidence" class="section">
+<div class="container">
+  <div class="section-head">
+    <div><div class="eyebrow">Evidence portfolio</div><h2>My English learning evidence</h2></div>
+    <p>Videos are embedded from YouTube. The PDF, documents, audio and mind map are included directly in this website package, so they remain available when the site is published.</p>
+  </div>
+
+  <div class="evidence-grid">
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">🎥</div><span class="done">Available</span></div>
+        <div class="code-label">GA1-240202501-AA1-EV02</div>
+        <h3>Video Presentation</h3>
+        <p>My first audiovisual evidence focuses on introducing information in English and practicing oral communication in a structured presentation.</p>
+        <div class="tags"><span>Speaking</span><span>Pronunciation</span><span>Presentation</span></div>
+      </div>
+      <div class="media-wrap"><div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/8JlSujOt79I" title="Video Presentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">📰</div><span class="done">Available</span></div>
+        <div class="code-label">GA1-240202501-AA1-EV03</div>
+        <h3>Training Program Brochure</h3>
+        <p>This brochure presents my training program, my learning path, the topics I have studied and my professional expectations as a SENA apprentice.</p>
+        <div class="tags"><span>Writing</span><span>Professional vocabulary</span><span>Visual communication</span></div>
+      </div>
+      <div class="preview">
+        <img src="assets/brochure_preview.png" alt="Preview of Danilo's Software Analysis and Development brochure">
+        <div>
+          <p>The brochure explains the Software Analysis and Development program and highlights my goal of improving programming, problem-solving, communication and analytical skills.</p>
+          <div class="actions">
+            <a class="small-btn" href="assets/brochure.pdf" target="_blank" rel="noopener">Open brochure PDF ↗</a>
+            <a class="small-btn" href="assets/brochure.pdf" download>Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">🎙️</div><span class="done">Available</span></div>
+        <div class="code-label">GA2-240202501-AA1-EV02</div>
+        <h3>Virtual Job Interview</h3>
+        <p>This activity simulates a job interview and develops the ability to answer professional questions, interact orally and communicate personal strengths in English.</p>
+        <div class="tags"><span>Speaking</span><span>Listening</span><span>Professional English</span></div>
+      </div>
+      <div class="media-wrap"><div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/HWaseEWm6kU" title="Virtual Job Interview" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">✍️</div><span class="done">Available</span></div>
+        <div class="code-label">GA2-240202501-AA1-EV03</div>
+        <h3>Chronicle: Carl Gustav Jung</h3>
+        <p><em>Carl Gustav Jung: A Journey Into the Human Mind</em> is a chronicle about Jung's life, his professional development and ideas such as analytical psychology, archetypes, introversion and extraversion.</p>
+        <div class="tags"><span>Writing</span><span>Past tenses</span><span>Biography</span><span>Academic vocabulary</span></div>
+        <div class="actions">
+          <a class="small-btn" href="assets/chronicle.docx" download>Download original DOCX</a>
+        </div>
+        <details>
+          <summary>Read a short reflection</summary>
+          <div class="detail-content">This activity allowed me to practice narrative writing while connecting English with psychology, one of the areas that has influenced my academic and professional interests. Jung is especially relevant to me because his work connects behavior, meaning, identity and personal development.</div>
+        </details>
+      </div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">🗺️</div><span class="done">Available</span></div>
+        <div class="code-label">GA2-240202501-AA2-EV02</div>
+        <h3>Tourist Place Presentation</h3>
+        <p>This audiovisual evidence develops descriptive language and oral presentation skills through the presentation of a tourist destination.</p>
+        <div class="tags"><span>Description</span><span>Speaking</span><span>Travel vocabulary</span></div>
+      </div>
+      <div class="media-wrap"><div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/PeSA04CNwlU" title="Tourist Place Presentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div></div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">📄</div><span class="done">Available</span></div>
+        <div class="code-label">GA2-240202501-AA2-EV03</div>
+        <h3>Written Document: Job Application</h3>
+        <p>I wrote a professional email to apply for a Junior Software Developer position. The document connects my SENA training with programming, databases, web development, teamwork and professional responsibility.</p>
+        <div class="tags"><span>Formal writing</span><span>Job application</span><span>Software vocabulary</span></div>
+        <div class="actions">
+          <a class="small-btn" href="assets/written_document.docx" download>Download original DOCX</a>
+        </div>
+        <details>
+          <summary>Read the main idea</summary>
+          <div class="detail-content">The application presents my background as a Software Analysis and Development student and emphasizes responsibility, organization, ethical behavior, attention to detail, willingness to learn and motivation to contribute to software design, development, testing and documentation.</div>
+        </details>
+      </div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">🎧</div><span class="done">Available</span></div>
+        <div class="code-label">GA3-240202501-AA1-EV02</div>
+        <h3>Audio: Attitudes, Beliefs and Obligations</h3>
+        <p>In this audio I reflect on responsibility, curiosity, discipline, technology, English, academic obligations, professional work and daily-life responsibilities.</p>
+        <div class="tags"><span>Speaking</span><span>Modal verbs</span><span>Reflection</span><span>Professional context</span></div>
+      </div>
+      <div class="audio-box">
+        <audio controls preload="metadata">
+          <source src="assets/audio_attitudes_beliefs_obligations.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <details>
+          <summary>Read transcript</summary>
+          <div class="detail-content">Good morning, my name is Danilo Esteban Rodriguez Zapata. I am a student of Software Analysis and Development at SENA.
+
+In this presentation, I am going to talk about my attitudes, beliefs and obligations in my academic and work context.
+
+First, I consider myself a responsible and committed person. I am very detail-oriented, and I like to analyze situations before making decisions. I am also a reflective person because I think it is important to understand not only what I do, but also why I do it. In my academic process, this attitude helps me study with more discipline and improve my learning.
+
+I am also a curious person. I like to learn new things, especially about technology, software development, data and digital tools. I believe curiosity is very important for a software development student because technology changes all the time. For that reason, I have to study constantly, practice programming and review new concepts to improve my skills.
+
+I believe technology can generate great contributions to the world. Through technology, people can solve real problems, improve processes, create better services and support education, work, communication and society.
+
+As a student of Software Analysis and Development, I think I can use technology to create useful solutions for people and organizations.
+
+I also believe English is very important for everyone, but especially for people who study or work in technology. English can open many doors because a lot of information, documentation, courses, tutorials and professional opportunities are in English.
+
+I believe that working in English can open a person&#x27;s mind because it allows us to understand other cultures, other ways of thinking and other professional contexts.
+
+In my opinion, effort and continuous work are necessary to build myself as a better person and as a better professional. I know that learning software development is not always easy. Sometimes I have to be patient, organize my time and keep going even when an activity is difficult.
+
+I must be disciplined because discipline is essential to finish my technology program successfully. Also, in my academic context, I have several obligations. Every week I have to check the SENA platform and review pending activities. I must deliver my assignments on time, read instructions carefully and follow the evaluation criteria.
+
+I should also improve my English because it is a useful skill for my academic and professional future.
+
+In my context, I currently work in evaluation and analysis in the education sector. This experience helps me understand the importance of responsibility, organization and clear communication. In my job, I have to pay attention to details, analyze information and complete my tasks with quality. I must be responsible because my work can support decision-making processes in education.
+
+I also have personal obligations in my daily life. I have to take my dogs out three times a day, make my bed and usually cook on weekends. I also have to check when food and household products are running out so I can go grocery shopping on time.
+
+These responsibilities help me be more organized and independent.
+
+To conclude, I believe my attitudes, beliefs and obligations are all connected. I am responsible, curious, reflective and passionate about technology. I have to study, work, practice and organize my time. I must continue learning, and I should use my knowledge to create positive contributions through technology.
+
+Thank you for listening to my audio.</div>
+        </details>
+      </div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">💬</div><span class="done">Available</span></div>
+        <div class="code-label">GA3-240202501-AA1-EV03</div>
+        <h3>Forum: Giving Opinions About Jobs</h3>
+        <p>My forum participation connects environmental responsibility with technology, digital transformation, organizational incentives and employee participation.</p>
+        <div class="tags"><span>Opinion language</span><span>Argumentation</span><span>Sustainability</span><span>Technology</span></div>
+        <div class="forum-q"><b>How can you be environmentally friendly at work?</b>In my opinion, being environmentally friendly at work also means using technology in a responsible way. For example, in work I can reduce unnecessary printing, use digital forms, automate reports, and organize information in cloud platforms. In software development, we can also create efficient digital solutions that save time, paper, energy, and resources.</div><div class="forum-q"><b>What kind of incentives could a green company offer to its employees?</b>A green company could offer incentives connected with learning and personal growth. For example, it could give access to sustainability courses, recognition in the company, flexible work options, or support for employees who use sustainable transportation. These incentives should not only be rewards; they should help employees build better habits.</div><div class="forum-q"><b>In what other ways could businesses involve their employees in environmental issues?</b>Businesses could involve employees by using data to show the impact of their actions. For example, they could share monthly results about energy savings, paper reduction, or digital transformation. They could also invite employees to propose technological ideas to solve environmental problems. I believe people participate more when they see real results and when their ideas are taken seriously.</div>
+        <details>
+          <summary>Peer interaction</summary>
+          <div class="detail-content">Two classmates responded positively to my contribution. They highlighted the use of technology to reduce paper and save resources, the value of sustainability courses and flexible work options, and the importance of showing employees measurable environmental results.</div>
+        </details>
+      </div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">🌐</div><span class="done">Available</span></div>
+        <div class="code-label">GA4-240202501-AA1-EV02</div>
+        <h3>My Personal Learning Environment for English</h3>
+        <p>My PLE organizes the people, tools, media, strategies and professional goals that support my independent English learning.</p>
+        <div class="tags"><span>Autonomous learning</span><span>Digital tools</span><span>Immersion</span><span>Professional goals</span></div>
+      </div>
+      <div class="ple-image">
+        <img src="assets/personal_learning_environment.png" alt="Mind map titled My Personal Learning Environment for English with six branches: learning journey, digital tools, media and immersion, learning strategies, people and communities, and professional application and goals.">
+      </div>
+      <div class="e-body" style="padding-top:8px">
+        <details>
+          <summary>How my PLE works</summary>
+          <div class="detail-content">My learning environment combines six areas: my previous learning journey; digital tools such as search engines, translation and dictionaries; media and immersion through movies, series, video games, music and online content; learning strategies based on daily exposure and contextual learning; people and communities such as friends abroad, Reddit and advanced English users; and professional applications in research, employment, international communication and career goals.</div>
+        </details>
+      </div>
+    </article>
+
+    <article class="evidence">
+      <div class="e-body">
+        <div class="e-top"><div class="icon">💻</div><span class="done">Current evidence</span></div>
+        <div class="code-label">GA4-240202501-AA1-EV03</div>
+        <h3>English Learning Blog</h3>
+        <p>This website is the final integration evidence. It consolidates my videos, written productions, audio, forum participation and Personal Learning Environment in one accessible digital portfolio.</p>
+        <div class="tags"><span>Integration</span><span>Digital portfolio</span><span>Reflection</span><span>Web communication</span></div>
+        <div class="actions"><a class="small-btn" href="#final">Go to final reflection ↓</a></div>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<section id="reflections" class="section">
+<div class="container">
+  <div class="section-head">
+    <div><div class="eyebrow">Blog reflections</div><h2>English, technology and society</h2></div>
+    <p>These reflections extend the portfolio beyond individual assignments and connect English with critical digital citizenship.</p>
+  </div>
+  <div class="reflection-grid">
+    <article class="feature one">
+      <div class="eyebrow">Critical Thinking · Media Literacy</div>
+      <h3>Thinking before accepting or sharing information</h3>
+      <p>Digital environments give us access to an enormous amount of information, but access is not the same as understanding. Critical thinking means checking the source, date, evidence and possible bias before accepting a claim.</p>
+      <p>For software and technology professionals, media literacy is especially relevant because algorithms, artificial intelligence and social platforms can amplify both useful knowledge and misinformation.</p>
+      <ul><li>Verify sources.</li><li>Compare information.</li><li>Look for evidence.</li><li>Recognize bias and manipulation.</li></ul>
+    </article>
+    <article class="feature two">
+      <div class="eyebrow">Crime · Punishment · Cybersecurity</div>
+      <h3>Responsibility in digital environments</h3>
+      <p>Cybercrime includes behaviors such as phishing, identity theft, unauthorized access and misuse of information. These actions can affect individuals, companies and public institutions.</p>
+      <p>As technology becomes part of almost every activity, software professionals have a responsibility to develop safer systems, protect data and make ethical decisions.</p>
+      <ul><li>Protect personal information.</li><li>Use secure authentication.</li><li>Understand digital risks.</li><li>Develop technology responsibly.</li></ul>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="final" class="section">
+<div class="container">
+  <div class="section-head"><div><div class="eyebrow">Final reflection</div><h2>What this journey represents</h2></div></div>
+  <div class="final">
+    <div class="panel">
+      <p class="quote">“Learning English is not only about grammar or vocabulary. It is also about becoming more confident when communicating, understanding different contexts and developing skills that support my professional growth.”</p>
+    </div>
+    <div class="panel">
+      <p>Throughout these activities, I have used English for personal presentations, professional communication, academic writing, interviews, reflection, sustainability and autonomous learning.</p>
+      <p>My goal is to continue using English as a practical tool for software development, research, technology and international professional opportunities.</p>
+      <div class="note"><strong>Portfolio status:</strong> the evidence displayed here is integrated into the website and ready to be published through a static hosting service such as GitHub Pages.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="container footer">
+    <span>Danilo Esteban Rodríguez Zapata · SENA · 2026</span>
+    <span>Software Analysis and Development · English Learning Portfolio</span>
+  </div>
+</footer>
+
+<a class="top-link" href="#top" aria-label="Back to top">↑</a>
+</body>
+</html>
